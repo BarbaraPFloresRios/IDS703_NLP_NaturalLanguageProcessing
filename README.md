@@ -1,2 +1,2 @@
 # IDS703_NLP_BarbaraFlores
-This repository contains the projects completed in the Introduction to Natural Language Processing class at Duke University.
+This repository contains the projects developed in the 'Introduction to Natural Language Processing - IDS703' class at Duke University.
