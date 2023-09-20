@@ -11,7 +11,7 @@ def create_n_gram_dictionary(n, corpus):
     return n_gram_dictionary
 
 
-def next_word(corpus, n, sentence, randomize=False):
+def next_word(corpus, n, sentence, randomize):
     if n == 1:
         last_n_words = ()
     elif n >= 1:
@@ -41,7 +41,7 @@ def next_word(corpus, n, sentence, randomize=False):
                 if value == max(n_gram_dictionary_subset.values()):
                     return key
     else:
-        return next_word(corpus, n - 1, sentence, randomize=False)
+        return next_word(corpus, n - 1, sentence, randomize)
 
 
 def finish_sentence(sentence, n, corpus, randomize=False):
@@ -56,8 +56,6 @@ def finish_sentence(sentence, n, corpus, randomize=False):
 
 
 if __name__ == "__main__":
-    print("Printing some test cases ...")
-
     test_cases = [
         # some test cases for the assigment
         (
@@ -71,7 +69,7 @@ if __name__ == "__main__":
             ["she", "was", "not"],
             1,
             nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
-            False,
+            True,
             "austen-sense",
         ),
         (
@@ -89,7 +87,7 @@ if __name__ == "__main__":
             "austen-sense",
         ),
     ]
-
+    print("\nPrinting some test cases ...")
     for sentence, n, corpus, randomize, courpus_name in test_cases:
         print(
             f"\n\nsentence: {sentence}\nn: {n}\ncorpus: {courpus_name}\nrandomize: {randomize} \noutput: {finish_sentence(sentence, n, corpus, randomize)} "
