@@ -56,36 +56,42 @@ def finish_sentence(sentence, n, corpus, randomize=False):
     return sentence
 
 
-# OJO!! ESTE VALOR CORPUS Y N VIENE DADO EN EL TEST, DEBERIA SER UN PARAMETRO
-
 if __name__ == "__main__":
-    print("probando casos de test/n")
+    print("Printing some test cases ...")
 
-    corpus = nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower())
-    sentence = ["she", "was", "not"]
-    n = 3
-    randomize = False
-    print(
-        f"\n\nsentence: {sentence}\nn: {n}\nrandomize: {randomize} \nresultado: {finish_sentence(sentence, n, corpus, False)}"
-    )
+    test_cases = [
+        (
+            ["she", "was", "not"],
+            3,
+            nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
+            False,
+            "austen-sense",
+        ),
+        (
+            ["she", "was", "not"],
+            1,
+            nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
+            False,
+            "austen-sense",
+        ),
+        (
+            ["robot"],
+            3,
+            nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
+            False,
+            "austen-sense",
+        ),
+        (
+            ["robot"],
+            2,
+            nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
+            False,
+            "austen-sense",
+        ),
+    ]
 
-    sentence = ["she", "was", "not"]
-    n = 1
-    randomize = False
-    print(
-        f"\n\nsentence: {sentence}\nn: {n}\nrandomize: {randomize} \nresultado: {finish_sentence(sentence, n, corpus, False)}"
-    )
-
-    sentence = ["robot"]
-    n = 3
-    randomize = False
-    print(
-        f"\n\nsentence: {sentence}\nn: {n}\nrandomize: {randomize} \nresultado: {finish_sentence(sentence, n, corpus, False)}"
-    )
-
-    sentence = ["robot"]
-    n = 2
-    randomize = False
-    print(
-        f"\n\nsentence: {sentence}\nn: {n}\nrandomize: {randomize} \nresultado: {finish_sentence(sentence, n, corpus, False)}"
-    )
+    for sentence, n, corpus, randomize, courpus_name in test_cases:
+        print(
+            f"\n\nsentence: {sentence}\nn: {n}\ncorpus: {courpus_name}\nrandomize: {randomize} \noutput: {finish_sentence(sentence, n, corpus, randomize)} "
+        )
+# dwje
