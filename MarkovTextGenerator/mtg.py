@@ -18,7 +18,6 @@ def next_word(corpus, n, sentence, randomize=False):
         last_n_words = sentence[-n + 1 :]
 
     n_gram_dictionary = create_n_gram_dictionary(n, corpus)
-
     n_gram_dictionary_subset = {}
 
     for key, value in n_gram_dictionary.items():
@@ -60,6 +59,7 @@ if __name__ == "__main__":
     print("Printing some test cases ...")
 
     test_cases = [
+        # some test cases for the assigment
         (
             ["she", "was", "not"],
             3,
@@ -94,4 +94,3 @@ if __name__ == "__main__":
         print(
             f"\n\nsentence: {sentence}\nn: {n}\ncorpus: {courpus_name}\nrandomize: {randomize} \noutput: {finish_sentence(sentence, n, corpus, randomize)} "
         )
-# dwje
