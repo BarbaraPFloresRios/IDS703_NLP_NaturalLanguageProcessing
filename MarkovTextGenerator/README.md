@@ -27,3 +27,5 @@ The developed code is located in the file [mtg.py](https://github.com/BarbaraPFl
 
 For more details about the exercise, you can refer to the [hw_ngrams.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/MarkovTextGenerator/assignment_instructions.pdf) file.
 
+**Limitations**
+A n-gram-based language model, like the Markov approach with n-grams, is a basic natural language processing model. In these models, probabilities of word or character occurrences are calculated based on sequences of the previous n words. While they are simple and efficient, these models have limitations such as fixed context and difficulties in capturing long-range dependencies. Nowadays, there are more advanced language models like Transformer-based models, including BERT, GPT-3, and their variants, which have surpassed traditional n-gram models in various natural language understanding and generation tasks. These advanced models employ attention mechanisms and deep learning techniques to capture complex language patterns, making them the state-of-the-art choice for many NLP applications.
