@@ -17,9 +17,13 @@ The function uses the following parameters:
 It returns an extended sentence until the first period (.), question mark (?), or exclamation point (!) is found OR until it has 10 total tokens.
 
 
-**Random process:** If *randomize* is True, the next word is drawn randomly, considering the probability of each n-gram in a weighted manner.
+**Random process:** 
 
-**Deterministic process:** If the input flag *randomize* is False, the algorithm chooses, at each step, the single most probable next token. When two tokens are equally probable, it chooses the one that occurs first in the corpus.
+If *randomize* is True, the next word is drawn randomly, considering the probability of each n-gram in a weighted manner.
+
+**Deterministic process:** 
+
+If the input flag *randomize* is False, the algorithm chooses, at each step, the single most probable next token. When two tokens are equally probable, it chooses the one that occurs first in the corpus.
 
 The algorithm uses stupid backoff and no smoothing.
 
@@ -28,4 +32,9 @@ The developed code is located in the file [mtg.py](https://github.com/BarbaraPFl
 For more details about the exercise, you can refer to the [hw_ngrams.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/MarkovTextGenerator/assignment_instructions.pdf) file.
 
 **Limitations**
+
 A n-gram-based language model, like the Markov approach with n-grams, is a basic natural language processing model. In these models, probabilities of word or character occurrences are calculated based on sequences of the previous n words. While they are simple and efficient, these models have limitations such as fixed context and difficulties in capturing long-range dependencies. Nowadays, there are more advanced language models like Transformer-based models, including BERT, GPT-3, and their variants, which have surpassed traditional n-gram models in various natural language understanding and generation tasks. These advanced models employ attention mechanisms and deep learning techniques to capture complex language patterns, making them the state-of-the-art choice for many NLP applications.
+
+Additionally, the present work does not aim to find the most efficient code execution method; rather, it intends to provide an example of code execution using algorithms that are as simple to understand as possible.
+
+**Test cases**
