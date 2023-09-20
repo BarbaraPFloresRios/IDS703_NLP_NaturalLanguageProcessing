@@ -1,3 +1,5 @@
+# bare-bones text generator
+
 import nltk
 import random
 from collections import Counter
