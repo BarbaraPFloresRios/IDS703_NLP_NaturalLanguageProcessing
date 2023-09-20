@@ -1,4 +1,4 @@
-# Markov text generation
+# Markov Text Generation
 ### Bárbara Flores
 
 This is a bare-bones Markov text generator for the 'Introduction to Natural Language Processing' class.
