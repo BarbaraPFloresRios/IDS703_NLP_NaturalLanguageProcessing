@@ -69,7 +69,7 @@ if __name__ == "__main__":
             ["she", "was", "not"],
             1,
             nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
-            True,
+            False,
             "austen-sense",
         ),
         (
