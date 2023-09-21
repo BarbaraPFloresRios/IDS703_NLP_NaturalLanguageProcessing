@@ -38,3 +38,57 @@ A n-gram-based language model, like the Markov approach with n-grams, is a basic
 Additionally, the present work does not aim to find the most efficient code execution method; rather, it intends to provide an example of code execution using algorithms that are as simple to understand as possible.
 
 **Test cases**
+
+In order to test the code, some test cases provided in class were executed. Finally, some personal test cases are also run.
+
+For the random cases, a **seed** was defined to ensure result reproducibility.
+
+- Clases Test Cases
+```python
+printing some test cases ...
+
+
+sentence: ['she', 'was', 'not']
+n: 3
+corpus: austen-sense
+randomize: False 
+output: ['she', 'was', 'not', 'in', 'the', 'world', '.'] 
+
+
+sentence: ['she', 'was', 'not']
+n: 1
+corpus: austen-sense
+randomize: True 
+output: ['she', 'was', 'not', "''", 'huswifes', 'ferrars', 'i', 'other', 'the', 'could'] 
+
+
+sentence: ['robot']
+n: 3
+corpus: austen-sense
+randomize: False 
+output: ['robot', ',', 'and', 'the', 'two', 'miss', 'steeles', ',', 'as', 'she'] 
+
+
+sentence: ['robot']
+n: 2
+corpus: austen-sense
+randomize: False 
+output: ['robot', ',', 'and', 'the', 'same', 'time', ',', 'and', 'the', 'same'] 
+
+```
+
+- Personal Test Cases
+```python
+sentence: ['she', 'was', 'not']
+n: 3
+corpus: austen-sense
+randomize: True 
+output: ['she', 'was', 'not', 'an', 'inch', 'to', 'its', 'safety', '.'] 
+
+
+sentence: ['robot']
+n: 2
+corpus: austen-sense
+randomize: True 
+output: ['robot', 'of', 'her', 'what', 'be', 'your', 'invitation', 'to', 'make', 'her']
+```
