@@ -1,0 +1,2 @@
+# Gradiente Descent
+### Bárbara Flores
