@@ -58,8 +58,8 @@ output: ['she', 'was', 'not', 'in', 'the', 'world', '.']
 sentence: ['she', 'was', 'not']
 n: 1
 corpus: austen-sense
-randomize: True 
-output: ['she', 'was', 'not', "''", 'huswifes', 'ferrars', 'i', 'other', 'the', 'could'] 
+randomize: False 
+output: ['she', 'was', 'not', ',', ',', ',', ',', ',', ',', ','] 
 
 
 sentence: ['robot']
@@ -74,7 +74,6 @@ n: 2
 corpus: austen-sense
 randomize: False 
 output: ['robot', ',', 'and', 'the', 'same', 'time', ',', 'and', 'the', 'same'] 
-
 ```
 
 
@@ -96,6 +95,7 @@ output: ['robot', 'of', 'her', 'what', 'be', 'your', 'invitation', 'to', 'make',
 
 For the following cases, we will use the Zen of Python as the corpus to train our model.
 <em>
+
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -119,6 +119,23 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!<em>
 
 ```python
+sentence: ['C+', 'Python']
+n: 2
+corpus: zen_of_python
+randomize: False 
+output: ['C+', 'Python', 'is', 'better', 'than', 'ugly.', 'Explicit', 'is', 'better', 'than'] 
 
-```
+
+sentence: ['easy']
+n: 2
+corpus: zen_of_python
+randomize: True 
+output: ['easy', 'to', 'explain,', 'it', 'may', 'not', 'be', 'obvious', 'at', 'first'] 
+
+
+sentence: ['never', 'is']
+n: 1
+corpus: zen_of_python
+randomize: True 
+output: ['never', 'is', 'better', 'is', 'guess.', 'implementation', 'than', 'better', 'than', 'Sparse'] 
 ```
