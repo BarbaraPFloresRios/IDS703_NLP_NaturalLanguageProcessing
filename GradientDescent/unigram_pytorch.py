@@ -92,4 +92,4 @@ def gradient_descent_example():
 
 
 if __name__ == "__main__":
-    gradient_descent_example
+    gradient_descent_example()
