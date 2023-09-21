@@ -77,6 +77,7 @@ output: ['robot', ',', 'and', 'the', 'same', 'time', ',', 'and', 'the', 'same']
 
 ```
 
+
 - Personal Test Cases
 ```python
 sentence: ['she', 'was', 'not']
