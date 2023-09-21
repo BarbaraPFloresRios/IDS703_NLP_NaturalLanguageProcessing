@@ -56,6 +56,7 @@ def finish_sentence(sentence, n, corpus, randomize=False):
 
 
 if __name__ == "__main__":
+    random.seed(123)
     test_cases = [
         # some test cases for the assigment
         (
@@ -86,8 +87,23 @@ if __name__ == "__main__":
             False,
             "austen-sense",
         ),
+        # Other cases (the same as first, but using randomize = True)
+        (
+            ["she", "was", "not"],
+            3,
+            nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
+            True,
+            "austen-sense",
+        ),
+        (
+            ["robot"],
+            2,
+            nltk.word_tokenize(nltk.corpus.gutenberg.raw("austen-sense.txt").lower()),
+            True,
+            "austen-sense",
+        ),
     ]
-    print("\nPrinting some test cases ...")
+    print("\nprinting some test cases ...")
     for sentence, n, corpus, randomize, courpus_name in test_cases:
         print(
             f"\n\nsentence: {sentence}\nn: {n}\ncorpus: {courpus_name}\nrandomize: {randomize} \noutput: {finish_sentence(sentence, n, corpus, randomize)} "
