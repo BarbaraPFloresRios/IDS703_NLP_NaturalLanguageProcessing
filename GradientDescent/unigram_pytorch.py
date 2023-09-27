@@ -5,6 +5,7 @@ from numpy.typing import NDArray
 import torch
 from typing import List, Optional
 from torch import nn
+import matplotlib.pyplot as plt
 
 
 FloatArray = NDArray[np.float64]
@@ -75,8 +76,8 @@ def gradient_descent_example():
     model = Unigram(len(vocabulary))
 
     # set number of iterations and learning rate
-    num_iterations =  # SET THIS
-    learning_rate =  # SET THIS
+    num_iterations =  100
+    learning_rate =  0.1
 
     # train model
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
@@ -88,7 +89,23 @@ def gradient_descent_example():
         optimizer.zero_grad()
 
     # display results
-    raise RuntimeError("Remove this error and create visualizations.")  # DO THIS
+
+    # calculatin real values of minimum possible loss and optimal probabilities
+    
+    # optimal probabilities
+    p_real = np.sum(encodings, axis=1) / np.sum(encodings)
+
+    # minimum possible loss
+    log_p_real = np.log(encodings.T @ p_real).sum()
+    loss_real = -log_p_real
+    print(loss_real)
+
+    #visualization
+    vocabulary_text = [str(i) for i in vocabulary] # in order to transform None to "None"
+    plt.bar( vocabulary_text,  p_real, color='pink')
+    plt.show()
+
+    #raise RuntimeError("Remove this error and create visualizations.")  # DO THIS
 
 
 if __name__ == "__main__":
