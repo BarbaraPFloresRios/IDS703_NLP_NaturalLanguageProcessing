@@ -104,7 +104,10 @@ def gradient_descent_example():
     plt.show()
 
     #raise RuntimeError("Remove this error and create visualizations.")  # DO THIS
-
+    print(list(model.parameters()))
+    print(loss.item())
+    print()
+    
 
 if __name__ == "__main__":
     gradient_descent_example()
