@@ -115,11 +115,24 @@ def gradient_descent_example():
     plt.show()
 
     #raise RuntimeError("Remove this error and create visualizations.")  # DO THIS
+    #print([ i.data for i in list(model.parameters())][0].tolist())
+   # print((list(model.parameters())))
+
+   ## print((model.parameters()).detach().numpy())
+   # print(loss.item())
+
     print(list(model.parameters()))
-    print(loss.item())
-    print()
-    print(loss_history)
-    
+
+   
+    parametros_modelo = list(model.parameters())
+
+    # Accede a los valores finales de los parámetros como arreglos NumPy
+    valores_finales = [parametro.detach().numpy() for parametro in parametros_modelo][0]
+    print("holi")
+    print(valores_finales)
+    print(type(valores_finales))
+# Convierte los tensores a arreglos NumPy después de moverlos a la CPU
+
 
 if __name__ == "__main__":
     gradient_descent_example()
