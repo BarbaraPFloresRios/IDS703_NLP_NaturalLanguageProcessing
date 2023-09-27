@@ -88,10 +88,8 @@ def gradient_descent_example():
         optimizer.step()
         optimizer.zero_grad()
 
-    # display results
-
-    # calculatin real values of minimum possible loss and optimal probabilities
     
+    # calculatin real values of minimum possible loss and optimal probabilities
     # optimal probabilities
     p_real = np.sum(encodings, axis=1) / np.sum(encodings)
 
@@ -100,7 +98,7 @@ def gradient_descent_example():
     loss_real = -log_p_real
     print(loss_real)
 
-    #visualization
+    # display results
     vocabulary_text = [str(i) for i in vocabulary] # in order to transform None to "None"
     plt.bar( vocabulary_text,  p_real, color='pink')
     plt.show()
@@ -110,3 +108,10 @@ def gradient_descent_example():
 
 if __name__ == "__main__":
     gradient_descent_example()
+
+
+
+    # print
+#print(f"learned p value: {model.p}")
+#print(f"log probability of document: {log_p}")
+#print(f"probability of document: {math.exp(log_p)}")
