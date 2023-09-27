@@ -6,6 +6,7 @@ import torch
 from typing import List, Optional
 from torch import nn
 import matplotlib.pyplot as plt
+import math
 
 
 FloatArray = NDArray[np.float64]
@@ -131,6 +132,16 @@ def gradient_descent_example():
     print("holi")
     print(valores_finales)
     print(type(valores_finales))
+    print(valores_finales.size)
+    a = 1/(1+np.exp(-valores_finales))
+    a = a.reshape(-1)
+    print(a)
+    print(type(a))
+    print(a.shape)
+    plt.clf()
+    plt.bar( vocabulary_text,  a, color='purple')
+    plt.show()
+
 # Convierte los tensores a arreglos NumPy después de moverlos a la CPU
 
 
