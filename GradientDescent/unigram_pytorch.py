@@ -78,12 +78,15 @@ def gradient_descent_example():
     # set number of iterations and learning rate
     num_iterations =  100
     learning_rate =  0.1
+    loss_history = []
 
     # train model
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     for _ in range(num_iterations):
+        
         p_pred = model(x)
         loss = -p_pred
+        loss_history.append(loss.item())
         loss.backward(retain_graph=True)
         optimizer.step()
         optimizer.zero_grad()
@@ -99,7 +102,15 @@ def gradient_descent_example():
     print(loss_real)
 
     # display results
+    plt.plot(range(len(loss_history)), loss_history, marker='o', linestyle='-')
+    plt.axhline(y=loss_real, color='red', linestyle='--', label=f'y = {loss_real}')
+
+    plt.show()
+
+
+
     vocabulary_text = [str(i) for i in vocabulary] # in order to transform None to "None"
+    plt.clf()
     plt.bar( vocabulary_text,  p_real, color='pink')
     plt.show()
 
@@ -107,6 +118,7 @@ def gradient_descent_example():
     print(list(model.parameters()))
     print(loss.item())
     print()
+    print(loss_history)
     
 
 if __name__ == "__main__":
