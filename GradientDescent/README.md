@@ -60,10 +60,11 @@ It is worth mentioning that when dealing with a larger corpus (n = 673,022), whe
 In the following graph, we can observe how the loss function evolves as we increase the iterations;
 the line gradually approaches the known minimum possible loss.
 
-<img width="948" alt="Screen Shot 2023-09-27 at 23 44 36" src="https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/assets/143648839/334e9617-21a8-4a2c-9422-4420dc6b4213">
+![loss_over_time](https://raw.githubusercontent.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/main/GradientDescent/images/loss_over_time.png)
 
 Additionally, if we graphically compare the final token probabilities with the (known) optimal probabilities,
 we can see that they get quite close with 100 iterations.
 
+![token_probabilities](https://raw.githubusercontent.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/main/GradientDescent/images/token_probabilities.png)
 
-<img width="988" alt="Screen Shot 2023-09-27 at 23 45 21" src="https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/assets/143648839/c6d66c13-363d-4a76-a111-71d8f05bf481">
+Finally, we were able to achieve a value very close to the actual one with a low processing time, using only 100 iterations, demonstrating the utility of gradient descent and the PyTorch library.
