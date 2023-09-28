@@ -18,6 +18,8 @@ In this project, we utilize the PyTorch library for model optimization using gra
 
 In this context, the task is to modify and enhance the provided [input_unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/input_unigram_pytorch.py), which was given in the Introduction to NLP class, to visualize the application of gradient descent in optimizing a unigram language model.
 
+For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/assignment_instructions.pdf) file.
+
 You can find my completed work for this assignment in [unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/unigram_pytorch.py) file
 
 We used a text from `'Sense and Sensibility'` by Jane Austen to train our unigram  model. I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
