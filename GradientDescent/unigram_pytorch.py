@@ -6,7 +6,7 @@ import torch
 from typing import List, Optional
 from torch import nn
 import matplotlib.pyplot as plt
-
+import math
 
 
 FloatArray = NDArray[np.float64]
@@ -107,12 +107,27 @@ def gradient_descent_example():
     loss_final = loss.item() # Final value of our loss function, obtained after n iterations.
     
 
-    # printing results
-    #print(f"learned p value: {model.p}")
-    #print(f"log probability of document: {log_p}")
-    #print(f"probability of document: {math.exp(log_p)}")
+    # printing results  
+    print("Given our token, the optimal (known) probabilities of our vocabulary are as follows:\n")
+    for i in range(len(vocabulary)):
+        print (f"{vocabulary[i]}: {p_real[i]:.5f}", end='\t')
+        if (i+1)%5 == 0:
+            print()
 
-  
+    print(f"\n\nThe log probability of document (known) is : {log_p_real:.5f}")
+    print(f"The probability of document (known) is : {math.exp(log_p_real):.5f}")
+
+    print(f"\nAfter training our model with n = {num_iterations} iterations and a learning rate of {learning_rate}, we obtained the following results:")
+
+    for i in range(len(vocabulary)):
+        print (f"{vocabulary[i]}: {p_final[i]:.5f}", end='\t')
+        if (i+1)%5 == 0:
+            print()
+
+    print(f"\n\nThe log probability of document (known) is : {log_p_final:.5f}")
+    print(f"The probability of document (known) is : {math.exp(log_p_final):.5f}")  
+    print("\nIt is worth mentioning that when dealing with a larger corpus (n = 673,022),\nwhen calculating the probability of the document, we obtain such a small\nvalue that tends to 0. This is why we work with logarithmic probabilities.")
+    
 
     # display results
     plt.plot(range(len(loss_history)), loss_history, marker='o', linestyle='-')
@@ -133,7 +148,7 @@ def gradient_descent_example():
     plt.show()
 
 
-
+    print(len(text))
 if __name__ == "__main__":
     gradient_descent_example()
 
