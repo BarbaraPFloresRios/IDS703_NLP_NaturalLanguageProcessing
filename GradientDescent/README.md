@@ -16,7 +16,7 @@ In this project, we utilize the PyTorch library for model optimization using gra
 
 **Assigment:** 
 
-In this context, the task is to modify and enhance the provided [input_unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/input_unigram_pytorch.py), which was given in the Introduction to NLP class, to visualize the application of gradient descent in optimizing a unigram language model.
+In this context, the task is to modify and enhance the provided [input_unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/input_unigram_pytorch.py), which was given in the Introduction to NLP class, taught by Patrick Wang, to visualize the application of gradient descent in optimizing a unigram language model.
 
 For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/assignment_instructions.pdf) file.
 
