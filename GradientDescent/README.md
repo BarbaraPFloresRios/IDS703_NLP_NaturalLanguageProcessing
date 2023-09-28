@@ -20,7 +20,7 @@ In this context, the task is to modify and enhance the provided [input_unigram_p
 
 You can find my completed work for this assignment in [unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/unigram_pytorch.py) file
 
-We used a text from 'Sense and Sensibility' by Jane Austen to train our unigram  model. I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
+We used a text from `'Sense and Sensibility'` by Jane Austen to train our unigram  model. I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
 
 **Known Values:** 
 
@@ -60,7 +60,7 @@ It is worth mentioning that when dealing with a larger corpus (n = 673,022), whe
 In the following graph, we can observe how the loss function evolves as we increase the iterations;
 the line gradually approaches the known minimum possible loss.
 
-timeframe.<img width="948" alt="Screen Shot 2023-09-27 at 23 44 36" src="https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/assets/143648839/334e9617-21a8-4a2c-9422-4420dc6b4213">
+<img width="948" alt="Screen Shot 2023-09-27 at 23 44 36" src="https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/assets/143648839/334e9617-21a8-4a2c-9422-4420dc6b4213">
 
 Additionally, if we graphically compare the final token probabilities with the (known) optimal probabilities,
 we can see that they get quite close with 100 iterations.
