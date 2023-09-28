@@ -6,7 +6,7 @@ import torch
 from typing import List, Optional
 from torch import nn
 import matplotlib.pyplot as plt
-import math
+
 
 
 FloatArray = NDArray[np.float64]
@@ -79,33 +79,47 @@ def gradient_descent_example():
     # set number of iterations and learning rate
     num_iterations =  100
     learning_rate =  0.1
-    loss_history = []
+    loss_history = []  #We create a list to store the values of the loss function as we train the model. 
 
     # train model
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     for _ in range(num_iterations):
-        
         p_pred = model(x)
         loss = -p_pred
-        loss_history.append(loss.item())
+        loss_history.append(loss.item()) #We save the value of the loss function in our 'loss_history' list.
         loss.backward(retain_graph=True)
         optimizer.step()
         optimizer.zero_grad()
 
-    
-    # calculatin real values of minimum possible loss and optimal probabilities
-    # optimal probabilities
+    # Calculating real values of the minimum possible loss and optimal probabilities.
+    # Real token probabilities (known)
     p_real = np.sum(encodings, axis=1) / np.sum(encodings)
 
-    # minimum possible loss
+    # Minimum possible loss (known)
     log_p_real = np.log(encodings.T @ p_real).sum()
     loss_real = -log_p_real
-    print(loss_real)
+
+
+    # Final token probabilities 
+    p_final = normalize(torch.sigmoid(model.s)).detach().numpy().flatten() 
+    
+    # Final value of our loss function, obtained after n iterations.
+    log_p_final = -loss.item() 
+    loss_final = loss.item() # Final value of our loss function, obtained after n iterations.
+    
+    
+
+
+    # printing results
+    #print(f"learned p value: {model.p}")
+    #print(f"log probability of document: {log_p}")
+    #print(f"probability of document: {math.exp(log_p)}")
+
+  
 
     # display results
     plt.plot(range(len(loss_history)), loss_history, marker='o', linestyle='-')
     plt.axhline(y=loss_real, color='red', linestyle='--', label=f'y = {loss_real}')
-
     plt.show()
 
 
@@ -115,42 +129,15 @@ def gradient_descent_example():
     plt.bar( vocabulary_text,  p_real, color='pink')
     plt.show()
 
-    #raise RuntimeError("Remove this error and create visualizations.")  # DO THIS
-    #print([ i.data for i in list(model.parameters())][0].tolist())
-   # print((list(model.parameters())))
 
-   ## print((model.parameters()).detach().numpy())
-   # print(loss.item())
-
-    print(list(model.parameters()))
-
-   
-    parametros_modelo = list(model.parameters())
-
-    # Accede a los valores finales de los parámetros como arreglos NumPy
-    valores_finales = [parametro.detach().numpy() for parametro in parametros_modelo][0]
-    print("holi")
-    print(valores_finales)
-    print(type(valores_finales))
-    print(valores_finales.size)
-    a = 1/(1+np.exp(-valores_finales))
-    a = a.reshape(-1)
-    print(a)
-    print(type(a))
-    print(a.shape)
+  
     plt.clf()
-    plt.bar( vocabulary_text,  a, color='purple')
+    plt.bar( vocabulary_text,  p_final, color='purple')
     plt.show()
 
-# Convierte los tensores a arreglos NumPy después de moverlos a la CPU
 
 
 if __name__ == "__main__":
     gradient_descent_example()
 
 
-
-    # print
-#print(f"learned p value: {model.p}")
-#print(f"log probability of document: {log_p}")
-#print(f"probability of document: {math.exp(log_p)}")
