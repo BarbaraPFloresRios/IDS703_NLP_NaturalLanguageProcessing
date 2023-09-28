@@ -20,7 +20,7 @@ In this context, the task is to modify and enhance the provided [input_unigram_p
 
 You can find my completed work for this assignment in [unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/unigram_pytorch.py) file
 
-We used a text from 'Sentido y sensibilidad' by Jane Austen to train our unigram  model. I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
+We used a text from 'Sense and Sensibility' by Jane Austen to train our unigram  model. I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
 
 **Known Values:** 
 
