@@ -99,7 +99,6 @@ def gradient_descent_example():
     log_p_real = np.log(encodings.T @ p_real).sum()
     loss_real = -log_p_real
 
-
     # Final token probabilities 
     p_final = normalize(torch.sigmoid(model.s)).detach().numpy().flatten() 
     
@@ -107,8 +106,6 @@ def gradient_descent_example():
     log_p_final = -loss.item() 
     loss_final = loss.item() # Final value of our loss function, obtained after n iterations.
     
-    
-
 
     # printing results
     #print(f"learned p value: {model.p}")
