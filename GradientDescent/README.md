@@ -12,12 +12,7 @@ The primary objective of gradient descent is to locate the minimum of a cost fun
 
 **PyTorch:** 
 
-For this task, we will use the PyTorch library to optimize our model with gradient descent.
-
-
-PyTorch is an open-source machine learning library that provides a flexible and dynamic framework for building and training deep neural networks. It is widely used in both research and production due to its intuitive design and support for GPU acceleration. PyTorch offers tools for automatic differentiation, making it easier to implement custom neural network architectures and optimize them using gradient-based methods like gradient descent. It has a rich ecosystem of libraries and community support, making it a popular choice for developing state-of-the-art machine learning models.
-
-We will specifically use the Adam algorithm. The Adam algorithm (Adaptive Moment Estimation) is a popular and efficient optimization method used in deep learning and is available in PyTorch as part of the optimization package. Adam combines the advantages of stochastic gradient descent (SGD) with moments and adaptability in the learning rate to converge faster and more stably during the training of neural networks.
+In this project, we utilize the PyTorch library for model optimization using gradient descent. PyTorch is a versatile open-source machine learning framework recognized for its dynamic design, GPU support, and extensive community backing. It simplifies custom neural network creation and gradient-based optimization, making it a preferred choice for both research and production. Specifically, we employ the Adam algorithm (Adaptive Moment Estimation) within PyTorch, a highly effective optimization technique that combines elements of stochastic gradient descent (SGD) with adaptive learning rates, ensuring quicker and more stable convergence during neural network training.
 
 **Assigment:** 
 
@@ -25,9 +20,10 @@ In this context, the task is to modify and enhance the provided [input_unigram_p
 
 You can find my completed work for this assignment in [unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/unigram_pytorch.py) file
 
-For this task, I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
+We used a text from 'Sentido y sensibilidad' by Jane Austen to train our unigram  model. I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
 
 **Known Values:** 
+
 Given our token, the optimal (known) probabilities of our vocabulary are:
 
 ```python
