@@ -21,31 +21,46 @@ We will specifically use the Adam algorithm. The Adam algorithm (Adaptive Moment
 
 **Assigment:** 
 
-In this context, the task is to modify and enhance the provided [input_unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/input_unigram_pytorch.py) script to visualize the application of gradient descent in optimizing a unigram language model.
+In this context, the task is to modify and enhance the provided [input_unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/input_unigram_pytorch.py), which was given in the Introduction to NLP class, to visualize the application of gradient descent in optimizing a unigram language model.
 
-You can find my completed work for this assignment in the file. [unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/unigram_pytorch.py)
+You can find my completed work for this assignment in [unigram_pytorch.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/unigram_pytorch.py) file
 
-
-
-
-For this task, I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable
+For this task, I selected a learning rate of 0.1 and n = 100, and the result obtained was quite close to the expected one, within a reasonable timeframe
 
 **Known Values:** 
+Given our token, the optimal (known) probabilities of our vocabulary are:
 
-Given our token, the log probability of document (known) is : -1956525.85084
+```python
+a: 0.06010	b: 0.01179	c: 0.01849	d: 0.03317	e: 0.09897	
+f: 0.01817	g: 0.01419	h: 0.04794	i: 0.05427	j: 0.00141	
+k: 0.00413	l: 0.03065	m: 0.02172	n: 0.05712	o: 0.06243	
+p: 0.01181	q: 0.00090	r: 0.04940	s: 0.04869	t: 0.06686	
+u: 0.02187	v: 0.00869	w: 0.01880	x: 0.00125	y: 0.01735	
+z: 0.00010	 : 0.16154	None: 0.05821
 
-The probability of document (known) is : 0.00000
+"The log probability of document (known) is : -1956525.85084"
+"The probability of document (known) is : 0.00000"
+```
 
 **Model Values:** 
 
-After training our model with n = 100 iterations and a learning rate = 0.1, we obtained that the final log probability of the document obtained with the model is : -1956867.25000
+After training our model with n = 100 iterations and a learning rate = 0.1, we obtained the following probabilities of our vocabulary:
+```python
+a: 0.06013	b: 0.01190	c: 0.01853	d: 0.03317	e: 0.09847	
+f: 0.01822	g: 0.01413	h: 0.04793	i: 0.05428	j: 0.00145	
+k: 0.00411	l: 0.03067	m: 0.02178	n: 0.05706	o: 0.06237	
+p: 0.01191	q: 0.00113	r: 0.04939	s: 0.04870	t: 0.06664	
+u: 0.02193	v: 0.00854	w: 0.01883	x: 0.00134	y: 0.01740	
+z: 0.00077	 : 0.16103	None: 0.05818	
 
-The final probability of the document obtained with the model is : 0.00000
+"The final log probability of the document obtained with the model is : -1956867.25000"
+"The final probability of the document obtained with the model is : 0.00000"
+```
 
 It is worth mentioning that when dealing with a larger corpus (n = 673,022), when calculating the probability of the document, we obtain such a small value that tends to 0. This is why we work with logarithmic probabilities.
 
+**Visualizations:** 
 
-Visualizations
 In the following graph, we can observe how the loss function evolves as we increase the iterations;
 the line gradually approaches the known minimum possible loss.
 
