@@ -1,4 +1,4 @@
-# Gradient Descent
+# [Gradient Descent](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/GradientDescent/README.md)
 ### Bárbara Flores
 
 
