@@ -108,7 +108,7 @@ def gradient_descent_example():
     
 
     # printing results  
-    print("Given our token, the optimal (known) probabilities of our vocabulary are as follows:\n")
+    print("\nGiven our token, the optimal (known) probabilities of our vocabulary are:\n")
     for i in range(len(vocabulary)):
         print (f"{vocabulary[i]}: {p_real[i]:.5f}", end='\t')
         if (i+1)%5 == 0:
@@ -117,38 +117,50 @@ def gradient_descent_example():
     print(f"\n\nThe log probability of document (known) is : {log_p_real:.5f}")
     print(f"The probability of document (known) is : {math.exp(log_p_real):.5f}")
 
-    print(f"\nAfter training our model with n = {num_iterations} iterations and a learning rate of {learning_rate}, we obtained the following results:")
+    print(f"\n\nAfter training our model with n = {num_iterations} iterations and a learning rate = {learning_rate}, \nwe obtained the following probabilities of our vocabulary:\n")
 
     for i in range(len(vocabulary)):
         print (f"{vocabulary[i]}: {p_final[i]:.5f}", end='\t')
         if (i+1)%5 == 0:
             print()
 
-    print(f"\n\nThe log probability of document (known) is : {log_p_final:.5f}")
-    print(f"The probability of document (known) is : {math.exp(log_p_final):.5f}")  
+    print(f"\n\nThe final log probability of the document obtained with the model is : {log_p_final:.5f}")
+    print(f"The final probability of the document obtained with the model is : {math.exp(log_p_final):.5f}")  
     print("\nIt is worth mentioning that when dealing with a larger corpus (n = 673,022),\nwhen calculating the probability of the document, we obtain such a small\nvalue that tends to 0. This is why we work with logarithmic probabilities.")
     
-
+    print("\n\nVisualizations")
+    
     # display results
-    plt.plot(range(len(loss_history)), loss_history, marker='o', linestyle='-')
-    plt.axhline(y=loss_real, color='red', linestyle='--', label=f'y = {loss_real}')
+    plt.clf()
+    plt.figure(figsize=(10, 6))  
+    plt.plot(range(len(loss_history)), loss_history, marker='o', label = "loss model")
+    plt.axhline(y=loss_real, color='purple', linestyle='--', label = "minimum possible loss")
+    plt.legend()
+    plt.title('Loss over time', fontsize=16)
+    plt.xlabel('Iterations')
+    plt.ylabel('Loss function')
     plt.show()
-
-
 
     vocabulary_text = [str(i) for i in vocabulary] # in order to transform None to "None"
     plt.clf()
-    plt.bar( vocabulary_text,  p_real, color='pink')
+
+    plt.figure(figsize=(10, 6))  
+    bar_width = 0.35
+    x = np.arange(len(vocabulary_text))
+    plt.bar(x - bar_width/2, p_real, bar_width, color='skyblue', label='p_real')
+    plt.bar(x + bar_width/2, p_final, bar_width, color='blue', label='p_model', alpha=0.7)  # Usar alpha para hacerlo semitransparente
+
+    plt.title('Token probabilities', fontsize=16)
+    plt.xlabel('tokens', fontsize=12)
+    plt.ylabel('Probabilities', fontsize=12)
+    plt.xticks(x, vocabulary_text)   
+    plt.legend()   
+
+
+    plt.tight_layout()
     plt.show()
 
 
-  
-    plt.clf()
-    plt.bar( vocabulary_text,  p_final, color='purple')
-    plt.show()
-
-
-    print(len(text))
 if __name__ == "__main__":
     gradient_descent_example()
 
