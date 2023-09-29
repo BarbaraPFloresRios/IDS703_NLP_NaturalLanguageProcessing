@@ -4,4 +4,4 @@ This repository contains the following projects developed in the 'Introduction t
 
 1. [MarkovTextGenerator](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/tree/main/20230920_MarkovTextGenerator)
 2. [GradientDescent](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/tree/main/20230927_GradientDescent)
-3. [PartOfSpeechTagging](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/tree/main/PartOfSpeechTagging)
+3. [PartOfSpeechTagging](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/tree/main/20231009_PartOfSpeechTagging)
