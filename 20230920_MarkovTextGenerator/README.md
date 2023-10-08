@@ -27,7 +27,7 @@ If the input flag *randomize* is False, the algorithm chooses, at each step, the
 
 The algorithm uses stupid backoff and no smoothing.
 
-The developed code is located in the file [mtg.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/MarkovTextGenerator/mtg.py)
+The developed code is located in the file [mtg.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20230920_MarkovTextGenerator/mtg.py)
 
 For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/MarkovTextGenerator/assignment_instructions.pdf) file.
 
