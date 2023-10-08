@@ -9,6 +9,8 @@ Part-of-speech tagging, often referred to as POS tagging, is a natural language 
 
 The Viterbi algorithm is a dynamic programming algorithm used for finding the most likely sequence of hidden states in a Hidden Markov Model (HMM) given a sequence of observations. It efficiently computes the maximum probability of a particular state sequence and is particularly useful in applications where the underlying states are not directly observable but can be inferred from observed data. The algorithm maintains a trellis or matrix of probabilities, calculating the most likely path to each state at each time step. By backtracking through the trellis, the algorithm identifies the optimal sequence of hidden states that best explains the observed data. Viterbi is widely employed in various fields, including speech recognition, natural language processing, and bioinformatics, for tasks where understanding the underlying sequence of states is crucial for accurate modeling and prediction.
 
+The Viterbi algorithm is often applied in the context of POS tagging when POS tags are treated as hidden states in an HMM. It helps determine the most probable sequence of POS tags for a given sequence of observed words in a sentence, taking into account the inherent dependencies between POS tags and the likelihood of observing specific words given their POS tags.
+
 **Assigment:**
 
 In this context, the task is to modify and enhance the provided [input_viterbi.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/input_viterbi.py), which was given in the Introduction to NLP class, taught by Patrick Wang, to create a part-of-speech hidden Markov model (HMM).
