@@ -3,7 +3,12 @@
 
 **Part-of-speech tagging:**
 
-Part-of-speech tagging, often referred to as POS tagging, is a natural language processing technique that involves assigning grammatical categories or "parts of speech" (such as nouns, verbs, adjectives, and adverbs) to each word in a given text. This process is crucial for understanding the syntactic structure and meaning of sentences, as it helps identify the role that each word plays within a sentence. POS tagging is widely used in various NLP applications, including machine translation, sentiment analysis, and information retrieval, to improve language understanding and enable more accurate linguistic analysis of text data.
+Part-of-speech tagging or POS tagging, is a natural language processing technique that involves assigning grammatical categories or "parts of speech" (such as nouns, verbs, adjectives, and adverbs) to each word in a given text. This process is crucial for understanding the syntactic structure and meaning of sentences, as it helps identify the role that each word plays within a sentence. POS tagging is widely used in various NLP applications, including machine translation, sentiment analysis, and information retrieval, to improve language understanding and enable more accurate linguistic analysis of text data.
+
+**Hidden Markov Model**
+
+A Hidden Markov Model (HMM) is a statistical model that represents a system which transitions between different states over time. The key characteristic of an HMM is that the states are not directly observable; instead, they generate observable symbols or observations. Each state has a probability distribution over possible observations, and the system transitions from one state to another based on transition probabilities.
+
 
 **Viterbi:**
 
