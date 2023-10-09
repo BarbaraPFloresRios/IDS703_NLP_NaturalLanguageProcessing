@@ -24,6 +24,19 @@ def post_list_func(corpus):
     return list(pos_set)
 
 
+def vocabulary_func(corpus):
+    """
+    This function will return the vocabulary
+    from the corpus. We will use the order of this
+    list to construct B matrix later on.
+    """
+    vocabulary_set = set()
+    for sentence in corpus:
+        for word, pos in sentence:
+            vocabulary_set.add(word)
+    return list(vocabulary_set)
+
+
 def pi_func(corpus, post_list):
     """
     This function takes the corpus and our ordered list of POS tags as parameters
@@ -53,22 +66,31 @@ def transition_matrix_func(corpus, post_list):
     for sentence in corpus:
         for i in range(len(sentence) - 1):
             dict_transition_count[(sentence[i][1], sentence[i + 1][1])] += 1
+            pass
 
     # The next dictionary counts how many times a specific part of speech appears at the beginning of a transition.
     for key, value in dict_transition_count.items():
         dict_pos_first_count[key[0]] += value
+        pass
 
     # This dictionary stores the transition matrix.
     for key, value in dict_transition_count.items():
         dict_transition_percentage[key] = value / dict_pos_first_count[key[0]]
+        pass
 
     for row in range(n_pos):
         for column in range(n_pos):
             output[row, column] = dict_transition_percentage[
                 (post_list[row], post_list[column])
             ]
-
+            pass
     return output
+
+
+def observation_matrix_func(corpus, post_list):
+    # for sentence in corpus:
+
+    pass
 
 
 """ 
@@ -135,8 +157,14 @@ corpus = nltk.corpus.brown.tagged_sents(tagset="universal")[:10000]
 # List with the order of POS for the following matrices
 post_list = post_list_func(corpus)
 
+# List with the order of vocabulary for the observation matrix
+vocabulary_list = vocabulary_func(corpus)
+
 # Matrix Pi - Initial state distribution
 pi = pi_func(corpus, post_list)
 
-# Matrix A - transition matrix
+# Matrix A - Transition matrix
 transition_matrix = transition_matrix_func(corpus, post_list)
+
+# Matrix B - Observation matrix
+observation_matrix = observation_matrix_func(corpus, post_list)
