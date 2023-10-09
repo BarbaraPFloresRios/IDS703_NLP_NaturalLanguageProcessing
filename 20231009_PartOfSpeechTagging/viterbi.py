@@ -4,9 +4,42 @@ Patrick Wang, 2021
 """
 from typing import Sequence, Tuple, TypeVar
 import numpy as np
+import nltk
 
 Q = TypeVar("Q")
 V = TypeVar("V")
+
+
+def post_list_func(corpus):
+    """
+    This function will return a list with the possible part-of-speech (POS) tags
+    from the corpus. We will use the order of this
+    list to construct the pi, A, and B matrices later on.
+    """
+    pos_set = set()
+    for sentence in corpus:
+        for word, pos in sentence:
+            pos_set.add(pos)
+    return list(pos_set)
+
+
+def pi_func(corpus, post_list):
+    """
+    This function takes the corpus and our ordered list of POS tags as parameters
+    and returns the initial state distribution matrix, π.
+    """
+    output = np.zeros(len(post_list))
+    for sentence in corpus:
+        for j in range(len(post_list)):
+            if sentence[0][1] == post_list[j]:
+                output[j] += 1 / len(corpus)
+    return output
+
+
+def transition_matrix_func(corpus, post_list):
+    output = np.zeros((len(post_list), len(post_list)))
+
+    return output
 
 
 def viterbi(
@@ -54,3 +87,14 @@ def viterbi(
         qs[i] = log_psi[i + 1][qs[i + 1]]
 
     return qs, np.exp(log_ps)
+
+
+corpus = nltk.corpus.brown.tagged_sents(tagset="universal")[:10000]
+post_list = post_list_func(corpus)  # to get the order of pos
+pi = pi_func(corpus, post_list)
+transition_matrix = transition_matrix_func(corpus, post_list)
+
+
+print(post_list)
+print(pi)
+print(transition_matrix)
