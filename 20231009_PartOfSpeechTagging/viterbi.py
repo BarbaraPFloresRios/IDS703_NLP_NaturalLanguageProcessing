@@ -20,6 +20,7 @@ def post_list_func(corpus):
     for sentence in corpus:
         for word, pos in sentence:
             pos_set.add(pos)
+            pass
     return list(pos_set)
 
 
@@ -33,11 +34,18 @@ def pi_func(corpus, post_list):
         for j in range(len(post_list)):
             if sentence[0][1] == post_list[j]:
                 output[j] += 1 / len(corpus)
+                pass
     return output
 
 
 def transition_matrix_func(corpus, post_list):
     output = np.zeros((len(post_list), len(post_list)))
+    for sentence in corpus:
+        for i in range(len(sentence) - 1):
+            first = sentence[i][1]
+            second = sentence[i + 1][1]
+            print(first, second)
+            pass
 
     return output
 
