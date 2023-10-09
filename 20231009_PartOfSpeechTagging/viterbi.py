@@ -71,18 +71,6 @@ def transition_matrix_func(corpus, post_list):
     return output
 
 
-""" 
-    for n_row in range(n_pos):
-        for n_col in range(n_pos):
-            for sentence in corpus:
-                for i in range(len(sentence) - 1):
-                    first = sentence[i][1]
-                    second = sentence[i + 1][1]
-                    if (first == post_list[n_row]) & (second == post_list[n_col]):
-                        output[n_row, n_col] += 1
-"""
-
-
 def viterbi(
     obs: Sequence[int],
     pi: np.ndarray[Tuple[V], np.dtype[np.float_]],
