@@ -5,7 +5,6 @@ Patrick Wang, 2021
 from typing import Sequence, Tuple, TypeVar
 import numpy as np
 import nltk
-import pandas as pd
 
 Q = TypeVar("Q")
 V = TypeVar("V")
@@ -28,31 +27,37 @@ def post_list_func(corpus):
 def pi_func(corpus, post_list):
     """
     This function takes the corpus and our ordered list of POS tags as parameters
-    and returns the initial state distribution matrix, π.
+    and returns the initial state distribution matrix, pi.
     """
-    output = np.zeros(len(post_list))
+    output = np.ones(len(post_list))  # smoothing
     for sentence in corpus:
         for j in range(len(post_list)):
             if sentence[0][1] == post_list[j]:
-                output[j] += 1 / len(corpus)
+                output[j] += 1
                 pass
-    return output
+    return output / output.sum()
 
 
 def transition_matrix_func(corpus, post_list):
+    """
+    This function takes the corpus and our ordered list of POS tags as parameters
+    and returns the transition matrix, A.
+    """
     n_pos = len(post_list)
     output = np.zeros((n_pos, n_pos))
 
-    dict_transition_count = {}
+    dict_transition_count = {
+        (x, y): 1 for x in post_list for y in post_list
+    }  # smoothing
     dict_pos_first_count = {i: 0 for i in post_list}
     dict_transition_percentage = {}
 
     for sentence in corpus:
         for i in range(len(sentence) - 1):
-            if (sentence[i][1], sentence[i + 1][1]) not in dict_transition_count:
-                dict_transition_count[(sentence[i][1], sentence[i + 1][1])] = 0
-            else:
-                dict_transition_count[(sentence[i][1], sentence[i + 1][1])] += 1
+            # if (sentence[i][1], sentence[i + 1][1]) not in dict_transition_count:
+            #    dict_transition_count[(sentence[i][1], sentence[i + 1][1])] = 1
+            # else:
+            dict_transition_count[(sentence[i][1], sentence[i + 1][1])] += 1
 
     for key, value in dict_transition_count.items():
         dict_pos_first_count[key[0]] += value
@@ -124,4 +129,6 @@ pi = pi_func(corpus, post_list)
 transition_matrix = transition_matrix_func(corpus, post_list)
 
 
-print(pd.DataFrame(transition_matrix, index=post_list, columns=post_list))
+print
+print(pi)
+# RECORDORIO ELIMINAR PANDAS
