@@ -45,26 +45,33 @@ def transition_matrix_func(corpus, post_list):
     """
     n_pos = len(post_list)
     output = np.zeros((n_pos, n_pos))
-
-    dict_transition_count = {
-        (x, y): 1 for x in post_list for y in post_list
-    }  # smoothing
+    # (1 for smoothing)
+    dict_transition_count = {(x, y): 1 for x in post_list for y in post_list}
     dict_pos_first_count = {i: 0 for i in post_list}
     dict_transition_percentage = {}
 
     for sentence in corpus:
         for i in range(len(sentence) - 1):
-            # if (sentence[i][1], sentence[i + 1][1]) not in dict_transition_count:
-            #    dict_transition_count[(sentence[i][1], sentence[i + 1][1])] = 1
-            # else:
             dict_transition_count[(sentence[i][1], sentence[i + 1][1])] += 1
 
+    # The next dictionary counts how many times a specific part of speech appears at the beginning of a transition.
     for key, value in dict_transition_count.items():
         dict_pos_first_count[key[0]] += value
 
+    # This dictionary stores the transition matrix.
     for key, value in dict_transition_count.items():
         dict_transition_percentage[key] = value / dict_pos_first_count[key[0]]
 
+    for row in range(n_pos):
+        for column in range(n_pos):
+            output[row, column] = dict_transition_percentage[
+                (post_list[row], post_list[column])
+            ]
+
+    return output
+
+
+""" 
     for row in range(n_pos):
         for column in range(n_pos):
             if (post_list[row], post_list[column]) not in dict_transition_percentage:
@@ -73,7 +80,7 @@ def transition_matrix_func(corpus, post_list):
                 output[row, column] = dict_transition_percentage[
                     (post_list[row], post_list[column])
                 ]
-    return output
+"""
 
 
 def viterbi(
@@ -124,11 +131,12 @@ def viterbi(
 
 
 corpus = nltk.corpus.brown.tagged_sents(tagset="universal")[:10000]
-post_list = post_list_func(corpus)  # to get the order of pos
+
+# List with the order of POS for the following matrices
+post_list = post_list_func(corpus)
+
+# Matrix Pi - Initial state distribution
 pi = pi_func(corpus, post_list)
+
+# Matrix A - transition matrix
 transition_matrix = transition_matrix_func(corpus, post_list)
-
-
-print
-print(pi)
-# RECORDORIO ELIMINAR PANDAS
