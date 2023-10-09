@@ -5,6 +5,7 @@ Patrick Wang, 2021
 from typing import Sequence, Tuple, TypeVar
 import numpy as np
 import nltk
+import pandas as pd
 
 Q = TypeVar("Q")
 V = TypeVar("V")
@@ -59,9 +60,14 @@ def transition_matrix_func(corpus, post_list):
     for key, value in dict_transition_count.items():
         dict_transition_percentage[key] = value / dict_pos_first_count[key[0]]
 
-    for i in range(n_pos):
-        for j in range(n_pos):
-            output[i, j] = dict_transition_percentage[("NOUN", "NOUN")]
+    for row in range(n_pos):
+        for column in range(n_pos):
+            if (post_list[row], post_list[column]) not in dict_transition_percentage:
+                pass
+            else:
+                output[row, column] = dict_transition_percentage[
+                    (post_list[row], post_list[column])
+                ]
     return output
 
 
@@ -130,4 +136,4 @@ pi = pi_func(corpus, post_list)
 transition_matrix = transition_matrix_func(corpus, post_list)
 
 
-print(transition_matrix)
+print(pd.DataFrame(transition_matrix, index=post_list, columns=post_list))
