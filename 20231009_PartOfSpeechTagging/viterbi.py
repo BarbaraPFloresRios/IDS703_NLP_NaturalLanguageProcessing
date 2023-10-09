@@ -34,7 +34,7 @@ def vocabulary_func(corpus):
     for sentence in corpus:
         for word, pos in sentence:
             vocabulary_set.add(word)
-    return list(vocabulary_set)
+    return list(vocabulary_set) + [None]
 
 
 def pi_func(corpus, post_list):
@@ -63,6 +63,7 @@ def transition_matrix_func(corpus, post_list):
     dict_pos_first_count = {i: 0 for i in post_list}
     dict_transition_percentage = {}
 
+    # dict_transition_count counts the number of transitions between pairs of Part of Speech tags in the corpus.
     for sentence in corpus:
         for i in range(len(sentence) - 1):
             dict_transition_count[(sentence[i][1], sentence[i + 1][1])] += 1
@@ -78,6 +79,7 @@ def transition_matrix_func(corpus, post_list):
         dict_transition_percentage[key] = value / dict_pos_first_count[key[0]]
         pass
 
+    # Now, we transform our final dictionary into an np.array.
     for row in range(n_pos):
         for column in range(n_pos):
             output[row, column] = dict_transition_percentage[
@@ -87,22 +89,45 @@ def transition_matrix_func(corpus, post_list):
     return output
 
 
-def observation_matrix_func(corpus, post_list):
-    # for sentence in corpus:
+def observation_matrix_func(corpus, post_list, vocabulary_list):
+    """
+    This function takes the corpus, our ordered list of POS tags, and the
+    ordered list of vocabulary as parameters and returns the transition matrix, A.
+    """
+    output = np.zeros((len(post_list), len(vocabulary_list)))
 
-    pass
+    dict_observation_word_pos_count = {
+        (x, y): 1 for x in vocabulary_list for y in post_list
+    }
+    dict_observation_word_count = {i: 0 for i in vocabulary_list}
+    dict_observation_word_percentage = {}
 
+    # The next dictionary counts how many times a word is tagged with each POS
+    for sentence in corpus:
+        for word_pos in sentence:
+            dict_observation_word_pos_count[word_pos] += 1
 
-""" 
-    for row in range(n_pos):
-        for column in range(n_pos):
-            if (post_list[row], post_list[column]) not in dict_transition_percentage:
-                pass
-            else:
-                output[row, column] = dict_transition_percentage[
-                    (post_list[row], post_list[column])
-                ]
-"""
+    # The following dictionary counts the total occurrences of each word.
+    for key, value in dict_observation_word_pos_count.items():
+        dict_observation_word_count[key[0]] += value
+        pass
+
+    # This dictionary stores the observation matrix.
+    for key, value in dict_observation_word_pos_count.items():
+        dict_observation_word_percentage[key] = (
+            value / dict_observation_word_count[key[0]]
+        )
+        pass
+
+    # Now, we transform our final dictionary into an np.array.
+    for row in range(len(post_list)):
+        for column in range(len(vocabulary_list)):
+            output[row, column] = dict_observation_word_percentage[
+                (vocabulary_list[column], post_list[row])
+            ]
+            pass
+
+    return output
 
 
 def viterbi(
@@ -167,4 +192,4 @@ pi = pi_func(corpus, post_list)
 transition_matrix = transition_matrix_func(corpus, post_list)
 
 # Matrix B - Observation matrix
-observation_matrix = observation_matrix_func(corpus, post_list)
+observation_matrix = observation_matrix_func(corpus, post_list, vocabulary_list)
