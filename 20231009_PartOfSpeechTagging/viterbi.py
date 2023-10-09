@@ -39,15 +39,42 @@ def pi_func(corpus, post_list):
 
 
 def transition_matrix_func(corpus, post_list):
-    output = np.zeros((len(post_list), len(post_list)))
+    n_pos = len(post_list)
+    output = np.zeros((n_pos, n_pos))
+
+    dict_transition_count = {}
+    dict_pos_first_count = {i: 0 for i in post_list}
+    dict_transition_percentage = {}
+
     for sentence in corpus:
         for i in range(len(sentence) - 1):
-            first = sentence[i][1]
-            second = sentence[i + 1][1]
-            print(first, second)
-            pass
+            if (sentence[i][1], sentence[i + 1][1]) not in dict_transition_count:
+                dict_transition_count[(sentence[i][1], sentence[i + 1][1])] = 0
+            else:
+                dict_transition_count[(sentence[i][1], sentence[i + 1][1])] += 1
 
+    for key, value in dict_transition_count.items():
+        dict_pos_first_count[key[0]] += value
+
+    for key, value in dict_transition_count.items():
+        dict_transition_percentage[key] = value / dict_pos_first_count[key[0]]
+
+    for i in range(n_pos):
+        for j in range(n_pos):
+            output[i, j] = dict_transition_percentage[("NOUN", "NOUN")]
     return output
+
+
+""" 
+    for n_row in range(n_pos):
+        for n_col in range(n_pos):
+            for sentence in corpus:
+                for i in range(len(sentence) - 1):
+                    first = sentence[i][1]
+                    second = sentence[i + 1][1]
+                    if (first == post_list[n_row]) & (second == post_list[n_col]):
+                        output[n_row, n_col] += 1
+"""
 
 
 def viterbi(
@@ -103,6 +130,4 @@ pi = pi_func(corpus, post_list)
 transition_matrix = transition_matrix_func(corpus, post_list)
 
 
-print(post_list)
-print(pi)
 print(transition_matrix)
