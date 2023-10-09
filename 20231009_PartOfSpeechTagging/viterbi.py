@@ -21,7 +21,7 @@ def post_list_func(corpus):
         for word, pos in sentence:
             pos_set.add(pos)
             pass
-    return list(pos_set)
+    return sorted(list(pos_set))
 
 
 def vocabulary_func(corpus):
@@ -34,7 +34,7 @@ def vocabulary_func(corpus):
     for sentence in corpus:
         for word, pos in sentence:
             vocabulary_set.add(word)
-    return list(vocabulary_set) + [None]
+    return sorted(list(vocabulary_set)) + [None]
 
 
 def pi_func(corpus, post_list):
@@ -94,12 +94,12 @@ def observation_matrix_func(corpus, post_list, vocabulary_list):
     This function takes the corpus, our ordered list of POS tags, and the
     ordered list of vocabulary as parameters and returns the transition matrix, A.
     """
-    output = np.zeros((len(post_list), len(vocabulary_list)))
+    output = np.zeros((len(vocabulary_list), len(post_list)))
 
     dict_observation_word_pos_count = {
-        (x, y): 1 for x in vocabulary_list for y in post_list
+        (word, pos): 1 for word in vocabulary_list for pos in post_list
     }
-    dict_observation_word_count = {i: 0 for i in vocabulary_list}
+    dict_observation_pos_count = {pos: 0 for pos in post_list}
     dict_observation_word_percentage = {}
 
     # The next dictionary counts how many times a word is tagged with each POS
@@ -107,24 +107,25 @@ def observation_matrix_func(corpus, post_list, vocabulary_list):
         for word_pos in sentence:
             dict_observation_word_pos_count[word_pos] += 1
 
-    # The following dictionary counts the total occurrences of each word.
+    # The following dictionary counts the total occurrences of each pos.
     for key, value in dict_observation_word_pos_count.items():
-        dict_observation_word_count[key[0]] += value
+        dict_observation_pos_count[key[1]] += value
         pass
 
     # This dictionary stores the observation matrix.
     for key, value in dict_observation_word_pos_count.items():
-        dict_observation_word_percentage[key] = (
-            value / dict_observation_word_count[key[0]]
+        dict_observation_word_percentage[key] = value / (
+            dict_observation_pos_count[key[1]]
         )
         pass
 
     # Now, we transform our final dictionary into an np.array.
-    for row in range(len(post_list)):
-        for column in range(len(vocabulary_list)):
+    for column in range(len(post_list)):
+        for row in range(len(vocabulary_list)):
             output[row, column] = dict_observation_word_percentage[
-                (vocabulary_list[column], post_list[row])
+                (vocabulary_list[row], post_list[column])
             ]
+
             pass
 
     return output
