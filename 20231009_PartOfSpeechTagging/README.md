@@ -95,3 +95,6 @@ coming         : VERB         NOUN         False
 face-to-face   : ADJ          NOUN         False
 another        : DET          NOUN         False
 ```
+
+There are several common reasons for potential failures in our model. These include issues related to the representativeness of our training data, potential challenges posed by the complexity or simplicity of the chosen model, inherent ambiguities in natural language, the size and quality of the training dataset, errors in the annotation of training data, and the model's ability to handle global context adequately. 
+
