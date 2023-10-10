@@ -201,14 +201,69 @@ observation_matrix = observation_matrix_func(corpus, post_list, vocabulary_list)
 
 # RESULTS
 print(
-    "After training our model, we tested it with the following 3 sentences from the Brown corpus:"
+    "After training our model, we tested it with the following 3 sentences from the Brown corpus:\n"
 )
 
 corpus_test = nltk.corpus.brown.tagged_sents(tagset="universal")[10150:10153]
 
-for i in range(len(corpus_test)):
-    print(f"{i}: {corpus_test[i]}")
+list_of_sentence_pos_real = []
+list_of_sentence_word = []
+for sentence in corpus_test:
+    sub_list_pos = []
+    sub_list_word = []
+    for word, pos in sentence:
+        sub_list_pos.append(pos)
+        sub_list_word.append(word)
+    list_of_sentence_pos_real.append(sub_list_pos)
+    list_of_sentence_word.append(sub_list_word)
+
+print(list_of_sentence_word)
+print(list_of_sentence_pos_real)
 
 print(
-    "Then, if we try to infer the sequence of states (POS label) for these sentences using our model,\nwe obtain the following:"
+    "\nThen, if we try to infer the sequence of states (POS label) for these sentences using our model,\nwe obtain the following:\n"
+)
+
+# List of lists containing the encoding of words within our vocabulary for each sentence.
+list_of_encoded_sentences_voc = []
+for sentence in corpus_test:
+    sub_list = []
+    for word, pos in sentence:
+        if word in vocabulary_list:
+            index = vocabulary_list.index(word)
+        else:
+            index = vocabulary_list.index(None)
+        sub_list.append(index)
+    list_of_encoded_sentences_voc.append(sub_list)
+
+# "Now we use our list_of_encoded_sentences_voc to pass its n sentences through the Viterbi function."
+
+list_of_encoded_sentences_pos = []
+for encoded_sentence_voc in list_of_encoded_sentences_voc:
+    list_of_encoded_sentences_pos.append(
+        viterbi(encoded_sentence_voc, pi, transition_matrix, observation_matrix)[0]
+    )
+
+list_of_sentence_pos_result = []
+for encoded_sentence_pos in list_of_encoded_sentences_pos:
+    sub_list = []
+    for code in encoded_sentence_pos:
+        sub_list.append(post_list[code])
+    list_of_sentence_pos_result.append(sub_list)
+
+words = [
+    word for list_of_sentence in list_of_sentence_word for word in list_of_sentence
+]
+real = [
+    pos for list_of_sentence in list_of_sentence_pos_real for pos in list_of_sentence
+]
+result = [
+    pos for list_of_sentence in list_of_sentence_pos_result for pos in list_of_sentence
+]
+
+for w, r, res in zip(words, real, result):
+    print(f"{w: <15}: {r: <10} {res: <10} {r == res}")
+
+print(
+    "\nFinally, we can see that with our model, 44 out of 47 POS were predicted correctly."
 )
