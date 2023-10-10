@@ -1,4 +1,4 @@
-# [Part Of Speech Tagging](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/PartOfSpeechTagging/README.md)
+# [Part Of Speech Tagging](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/tree/main/20231009_PartOfSpeechTagging)
 ### Bárbara Flores
 
 **Part-of-speech tagging:**
