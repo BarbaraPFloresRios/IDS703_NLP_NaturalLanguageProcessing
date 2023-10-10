@@ -22,3 +22,54 @@ In this context, the task is to modify and enhance the provided [input_viterbi.p
 For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/assignment_instructions.pdf) file.
 
 You can find my completed work for this project in [viterbi.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/viterbi.py) file
+
+```python
+Those          : DET        DET        True
+coming         : VERB       NOUN       False
+from           : ADP        ADP        True
+other          : ADJ        ADJ        True
+denominations  : NOUN       NOUN       True
+will           : VERB       VERB       True
+welcome        : VERB       VERB       True
+the            : DET        DET        True
+opportunity    : NOUN       NOUN       True
+to             : PRT        PRT        True
+become         : VERB       VERB       True
+informed       : VERB       VERB       True
+.              : .          .          True
+The            : DET        DET        True
+preparatory    : ADJ        ADJ        True
+class          : NOUN       NOUN       True
+is             : VERB       VERB       True
+an             : DET        DET        True
+introductory   : ADJ        ADJ        True
+face-to-face   : ADJ        NOUN       False
+group          : NOUN       NOUN       True
+in             : ADP        ADP        True
+which          : DET        DET        True
+new            : ADJ        ADJ        True
+members        : NOUN       NOUN       True
+become         : VERB       VERB       True
+acquainted     : VERB       VERB       True
+with           : ADP        ADP        True
+one            : NUM        NUM        True
+another        : DET        NOUN       False
+.              : .          .          True
+It             : PRON       PRON       True
+provides       : VERB       VERB       True
+a              : DET        DET        True
+natural        : ADJ        ADJ        True
+transition     : NOUN       NOUN       True
+into           : ADP        ADP        True
+the            : DET        DET        True
+life           : NOUN       NOUN       True
+of             : ADP        ADP        True
+the            : DET        DET        True
+local          : ADJ        ADJ        True
+church         : NOUN       NOUN       True
+and            : CONJ       CONJ       True
+its            : DET        DET        True
+organizations  : NOUN       NOUN       True
+.              : .          .          True
+```
+
