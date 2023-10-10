@@ -131,6 +131,9 @@ def observation_matrix_func(corpus, post_list, vocabulary_list):
     return output
 
 
+###
+
+
 def viterbi(
     obs: Sequence[int],
     pi: np.ndarray[Tuple[V], np.dtype[np.float_]],
@@ -197,17 +200,15 @@ transition_matrix = transition_matrix_func(corpus, post_list)
 observation_matrix = observation_matrix_func(corpus, post_list, vocabulary_list)
 
 # RESULTS
+print(
+    "After training our model, we tested it with the following 3 sentences from the Brown corpus:"
+)
+
 corpus_test = nltk.corpus.brown.tagged_sents(tagset="universal")[10150:10153]
 
+for i in range(len(corpus_test)):
+    print(f"{i}: {corpus_test[i]}")
 
-# print(corpus_test)
-
-lista = []
-for sentence in corpus_test:
-    for word, pos in sentence:
-        if word in vocabulary_list:
-            lista.append(vocabulary_list.index(word))
-        else:
-            lista.append(vocabulary_list.index(None))
-
-# viterbi(lista, pi, transition_matrix, np.transpose(observation_matrix))
+print(
+    "Then, if we try to infer the sequence of states (POS label) for these sentences using our model,\nwe obtain the following:"
+)
