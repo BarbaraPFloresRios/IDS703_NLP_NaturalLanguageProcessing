@@ -23,6 +23,16 @@ For more details about the exercise, you can refer to the [assignment_instructio
 
 You can find my completed work for this project in [viterbi.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/viterbi.py) file
 
+For this project, we trained a Hidden Markov Model for part-of-speech tagging using the first 10,000 tagged sentences from the `Brown Corpus`.
+
+With this corpus, the following matrices were constructed, which served as input to train our model:
+
+- π: initial state distribution
+- A: transition matrix
+- B: observation matrix or emission matrix"
+
+
+
 ```python
 Those          : DET        DET        True
 coming         : VERB       NOUN       False
