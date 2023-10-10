@@ -35,6 +35,7 @@ With this corpus, the following matrices were constructed, which served as input
 
 ```python
 Word           : Real POS     Predicted    POS Correct Prediction?
+
 Those          : DET          DET          True
 coming         : VERB         NOUN         False
 from           : ADP          ADP          True
