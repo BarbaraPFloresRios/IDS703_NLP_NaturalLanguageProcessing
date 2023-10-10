@@ -86,4 +86,12 @@ organizations  : NOUN         NOUN         True
 .              : .            .            True
 ```
 
-We can see that out of 47 words in our text, we were able to correctly label 44
+We can see that out of 47 words in our text, we were able to correctly label 44 with our model. 
+"In particular, the cases where different values were obtained were:
+```python
+
+Word           : Real POS     Pred POS     Correct Prediction?
+coming         : VERB         NOUN         False
+face-to-face   : ADJ          NOUN         False
+another        : DET          NOUN         False
+```
