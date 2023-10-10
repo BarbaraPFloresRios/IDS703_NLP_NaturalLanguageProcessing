@@ -31,7 +31,8 @@ With this corpus, the following matrices were constructed, which served as input
 - A: transition matrix
 - B: observation matrix or emission matrix"
 
-
+Then, using the provided Viterbi implementation, the sequence of states for sentences 10150-10152 from the Brown corpus was inferred. 
+The obtained result by comparing the actual POS with those predicted by the model is as follows:
 
 ```python
 Word           : Real POS     Pred POS     Correct Prediction?
@@ -85,3 +86,4 @@ organizations  : NOUN         NOUN         True
 .              : .            .            True
 ```
 
+We can see that out of 47 words in our text, we were able to correctly label 44
