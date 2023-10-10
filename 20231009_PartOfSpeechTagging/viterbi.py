@@ -92,9 +92,9 @@ def transition_matrix_func(corpus, post_list):
 def observation_matrix_func(corpus, post_list, vocabulary_list):
     """
     This function takes the corpus, our ordered list of POS tags, and the
-    ordered list of vocabulary as parameters and returns the transition matrix, A.
+    ordered list of vocabulary as parameters and returns the observation/emission matrix, B.
     """
-    output = np.zeros((len(vocabulary_list), len(post_list)))
+    output = np.zeros((len(post_list), len(vocabulary_list)))
 
     dict_observation_word_pos_count = {
         (word, pos): 1 for word in vocabulary_list for pos in post_list
@@ -106,6 +106,7 @@ def observation_matrix_func(corpus, post_list, vocabulary_list):
     for sentence in corpus:
         for word_pos in sentence:
             dict_observation_word_pos_count[word_pos] += 1
+            pass
 
     # The following dictionary counts the total occurrences of each pos.
     for key, value in dict_observation_word_pos_count.items():
@@ -120,12 +121,11 @@ def observation_matrix_func(corpus, post_list, vocabulary_list):
         pass
 
     # Now, we transform our final dictionary into an np.array.
-    for column in range(len(post_list)):
-        for row in range(len(vocabulary_list)):
+    for row in range(len(post_list)):
+        for column in range(len(vocabulary_list)):
             output[row, column] = dict_observation_word_percentage[
-                (vocabulary_list[row], post_list[column])
+                (vocabulary_list[column], post_list[row])
             ]
-
             pass
 
     return output
@@ -178,6 +178,7 @@ def viterbi(
     return qs, np.exp(log_ps)
 
 
+# PARAMETERS
 corpus = nltk.corpus.brown.tagged_sents(tagset="universal")[:10000]
 
 # List with the order of POS for the following matrices
@@ -194,3 +195,19 @@ transition_matrix = transition_matrix_func(corpus, post_list)
 
 # Matrix B - Observation matrix
 observation_matrix = observation_matrix_func(corpus, post_list, vocabulary_list)
+
+# RESULTS
+corpus_test = nltk.corpus.brown.tagged_sents(tagset="universal")[10150:10153]
+
+
+# print(corpus_test)
+
+lista = []
+for sentence in corpus_test:
+    for word, pos in sentence:
+        if word in vocabulary_list:
+            lista.append(vocabulary_list.index(word))
+        else:
+            lista.append(vocabulary_list.index(None))
+
+# viterbi(lista, pi, transition_matrix, np.transpose(observation_matrix))
