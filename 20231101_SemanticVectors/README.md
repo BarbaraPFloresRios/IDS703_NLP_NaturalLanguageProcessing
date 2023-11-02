@@ -13,6 +13,14 @@ LSA involves dimensionality reduction using mathematical techniques like Singula
 
 Commonly used in natural language processing, LSA enhances the understanding of meaning in a text corpus. However, it's worth noting that LSA has limitations in capturing complex concepts and may not capture language nuances as effectively as newer approaches like neural network-based language models such as Word2Vec, GloVe, or BERT.
 
+**Word2Vec-Based Document Embeddings**
+
+Word2Vec-Based Document Embeddings" refers to a topic in natural language processing where documents are represented as dense vectors using the Word2Vec model. In this approach, each word in a document is first transformed into a high-dimensional vector based on its meaning and context as learned from a large text corpus. These word vectors are then combined, often by simple summation, to create a document-level vector representation.
+
+This technique allows documents to be embedded in a continuous vector space, where documents with similar meanings or content are closer to each other in this space. Word2Vec-based document embeddings are widely used in various NLP tasks, including document classification, sentiment analysis, and information retrieval, as they capture semantic information in documents and can improve the performance of machine learning models in these tasks.
+
+In summary, "Word2Vec-Based Document Embeddings" involves representing documents as vectors by leveraging Word2Vec's ability to encode semantic meaning in words and then combining these word vectors to obtain a meaningful representation of entire documents.
+
 **Assigment:**
 
 In this context, the task is to modify and enhance the provided [input_document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/input_document_vectors_experiment.py), which was given in the Introduction to NLP class, taught by Patrick Wang, to explore how dense word/document embeddings can be used for document classification. The task is to to distinguish between documents from two different authors. We will implement two types of dense document vectors:
