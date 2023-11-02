@@ -9,6 +9,6 @@ Semantic vectors" are numerical representations that capture the meaning of word
 
 In this context, the task is to modify and enhance the provided [input_viterbi.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/input_viterbi.py), which was given in the Introduction to NLP class, taught by Patrick Wang, to create a part-of-speech hidden Markov model (HMM).
 
-For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/assignment_instructions.pdf) file.
+For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/%20assignment_instructions.pdf) file.
 
 You can find my completed work for this project in [viterbi.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231009_PartOfSpeechTagging/viterbi.py) file
