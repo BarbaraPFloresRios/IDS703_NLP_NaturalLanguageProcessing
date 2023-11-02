@@ -11,7 +11,7 @@ In this context, the task is to modify and enhance the provided [input_document_
 
 - Using Latent Semantic Analysis (LSA) on raw token counts.
 - Summing pretrained Word2Vec embeddings.
-Both methods will produce document vectors of length 300. The results and discussion of this new task will be included in the same repository.
+Both methods will produce document vectors of length 300.
 
 For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/%20assignment_instructions.pdf) file.
 
