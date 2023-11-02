@@ -6,6 +6,7 @@
 Semantic vectors" are numerical representations that capture the meaning of words, phrases, or documents in a vector space. These vectors are used in natural language processing to understand and measure semantic similarity between words or texts, which is crucial in tasks such as information retrieval, text classification, and machine translation.
 
 **LSA**
+
 LSA (Latent Semantic Analysis) is a technique in natural language processing and data analysis used to uncover semantic similarity patterns in a set of documents. It relies on the concept that words appearing in similar contexts tend to have similar meanings. By applying LSA, one can reveal semantic relationships and hidden structures within large text collections.
 
 LSA involves dimensionality reduction using mathematical techniques like Singular Value Decomposition (SVD), transforming word and document representations into a lower-dimensional semantic space. This enables the discovery of semantic similarities between words and documents, making it valuable for tasks like information retrieval, text summarization, document clustering, and sentiment analysis.
