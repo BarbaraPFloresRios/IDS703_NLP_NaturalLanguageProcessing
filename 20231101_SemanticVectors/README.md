@@ -7,7 +7,7 @@ Semantic vectors" are numerical representations that capture the meaning of word
 
 **Assigment:**
 
-In this context, the task is to modify and enhance the provided [input_document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/input_document_vectors_experiment.py), which was given in the Introduction to NLP class, taught by Patrick Wang, to create a part-of-speech hidden Markov model (HMM).
+In this context, the task is to modify and enhance the provided [input_document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/input_document_vectors_experiment.py), which was given in the Introduction to NLP class, taught by Patrick Wang, to explore how dense word/document embeddings can be used for document classification. The task is to to distinguish between documents from two different authors.
 
 For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/%20assignment_instructions.pdf) file.
 
