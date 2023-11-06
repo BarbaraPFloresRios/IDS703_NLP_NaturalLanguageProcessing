@@ -32,3 +32,15 @@ In this context, the task is to modify and enhance the provided [input_document_
 For more details about the exercise, you can refer to the [assignment_instructions.pdf](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/%20assignment_instructions.pdf) file.
 
 You can find my completed work for this project in [document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/document_vectors_experiment.py) file
+
+
+```python
+raw counts (train): 0.9887267904509284
+raw_counts (test): 0.9686567164179104
+tfidf (train): 0.9993368700265252
+tfidf (test): 0.9716417910447761
+lsa (train): 0.9661803713527851
+lsa (test): 0.9492537313432836
+word2vec (train): 0.9348474801061007
+word2vec (test): 0.9194029850746268
+```
