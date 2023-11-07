@@ -37,7 +37,7 @@ These four models allow for a comparison of different approaches to document cla
 
 ### Results
 
-The results obtained by our models were:
+The percent correct for each method were:
 
 
 ```python
