@@ -1,3 +1,7 @@
+# Team
+# Daniela Jiménez
+# Bárbara Flores
+
 """Compare token/document vectors for classification."""
 import random
 from typing import List, Mapping, Optional, Sequence
