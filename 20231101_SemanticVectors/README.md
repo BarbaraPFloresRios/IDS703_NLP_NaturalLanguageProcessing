@@ -37,6 +37,9 @@ These four models allow for a comparison of different approaches to document cla
 
 ### Results
 
+The results obtained by our models were:
+
+
 ```python
 raw counts (train): 0.9887267904509284
 raw_counts (test): 0.9686567164179104
