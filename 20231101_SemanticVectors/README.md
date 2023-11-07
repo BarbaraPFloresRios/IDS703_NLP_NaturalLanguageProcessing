@@ -12,6 +12,8 @@ For more details about the exercise, you can refer to the [assignment_instructio
 
 You can find our completed work for this project in [document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/document_vectors_experiment.py) file
 
+COMENTAR LO DE LA BOLSA DE WORDS
+
 The models that were compared in this exercise were:
 
 1. **Raw Counts (Token Counts)**:
