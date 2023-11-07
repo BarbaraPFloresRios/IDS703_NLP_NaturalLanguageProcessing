@@ -62,7 +62,7 @@ word2vec (test): 0.9194029850746268
 
 3. **LSA:**
    
-   Latent Semantic Analysis (LSA), which reduces token count dimensions to 300, exhibits slightly lower performance compared to Raw Counts, likely due to its focus on capturing underlying semantic information while potentially overlooking fine-grained details. This reduced dimensionality may not effectively capture textual nuances. LSA has limitations, such as sensitivity to term variability, as it treats terms as separate entities without considering semantic similarities, impacting its handling of word form variations and synonyms.
+   Latent Semantic Analysis (LSA) involves the reduction of token count dimensions to 300 and exhibits an accuracy of approximately 0.949, slightly lower than Raw Counts. This difference in performance could be attributed to LSA's primary focus on capturing underlying semantic information while potentially sacrificing fine-grained details. The reduced dimensionality might not effectively capture the intricacies of the text, contributing to its marginally decreased performance. It's important to note that LSA has limitations, such as sensitivity to term variability. LSA treats terms as separate entities without considering their semantic similarities, which can hinder its ability to handle variations in word forms and synonyms, affecting its performance.
 
 4. **Word2Vec:**
 
