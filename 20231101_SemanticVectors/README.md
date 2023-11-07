@@ -53,7 +53,17 @@ word2vec (test): 0.9194029850746268
 
 
 1. **Raw Counts:**
+   
 In our baseline case, we employed Raw Counts, where documents are represented as vectors of token counts. We achieved an accuracy of approximately 97% on our test data, which can be considered a robust performance for our model. Raw Counts provide a fundamental approach to document representation by considering the raw frequency of words in documents.
 
 2. **TF-IDF:**
+   
 When we transition to the TF-IDF model, we observe slightly improved results with an accuracy of 97.1% on our test data. TF-IDF represents an enhancement over Raw Counts as it accounts for the importance of words within the entire document collection. This method assigns higher weights to words that are common in one class of documents but distinctively frequent in another, thus enhancing the model's ability to discriminate between documents. The focus on term importance results in superior classification performance compared to Raw Counts, which solely considers word frequency. TF-IDF proves effective in capturing the discriminative power of words in the classification process.
+
+3. **LSA:**
+   
+Latent Semantic Analysis (LSA), which reduces token count dimensions to 300, exhibits slightly lower performance compared to Raw Counts, likely due to its focus on capturing underlying semantic information while potentially overlooking fine-grained details. This reduced dimensionality may not effectively capture textual nuances. LSA has limitations, such as sensitivity to term variability, as it treats terms as separate entities without considering semantic similarities, impacting its handling of word form variations and synonyms.
+
+4. **Word2Vec:**
+
+In our evaluation, Word2Vec yields a lower classification performance with an accuracy of approximately 91%. This decrease in performance can be attributed to Word2Vec's reliance on pre-trained word vectors, which may not be perfectly aligned with the distinctive writing styles of Lewis Carroll and Jane Austen. It's important to consider that these authors wrote their works almost two centuries ago, while we are employing a pre-trained model derived from contemporary news data. This temporal misalignment could contribute to Word2Vec's challenges in capturing the unique textual characteristics and semantics of these historical writings.
