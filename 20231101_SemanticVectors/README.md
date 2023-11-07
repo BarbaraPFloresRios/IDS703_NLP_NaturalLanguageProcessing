@@ -45,7 +45,7 @@ The percent correct for each method were:
 
 ```python
 
-raw counts (train): 0.9887267904509284
+raw_counts (train): 0.9887267904509284
 raw_counts (test): 0.9686567164179104
 tfidf (train): 0.9993368700265252
 tfidf (test): 0.9716417910447761
