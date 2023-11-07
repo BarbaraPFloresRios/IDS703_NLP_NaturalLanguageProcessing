@@ -58,7 +58,7 @@ word2vec (test): 0.9194029850746268
 
 1. **Raw Counts:**
    
-   In our baseline case, we employed Raw Counts, where documents are represented as vectors of token counts. We achieved an accuracy of approximately 97% on our test data, which can be considered a robust performance for our model. Raw Counts provide a fundamental approach to document representation by considering the raw frequency of words in documents.
+   In our baseline case, we employed Raw Counts, where documents are represented as vectors of token counts. We achieved an accuracy of approximately 96.9% on our test data, which can be considered a robust performance for our model. Raw Counts provide a fundamental approach to document representation by considering the raw frequency of words in documents.
 
 2. **TF-IDF:**
    
@@ -66,8 +66,8 @@ word2vec (test): 0.9194029850746268
 
 3. **LSA:**
    
-   Latent Semantic Analysis (LSA) involves the reduction of token count dimensions to 300 and exhibits an accuracy of approximately 0.949, slightly lower than Raw Counts. This difference in performance could be attributed to LSA's primary focus on capturing underlying semantic information while potentially sacrificing fine-grained details. The reduced dimensionality might not effectively capture the intricacies of the text, suchs as word variations or synonyms ,contributing to its marginally decreased performance. It's important to note that LSA has limitations, such as sensitivity to term variability.
+   Latent Semantic Analysis (LSA) involves the reduction of token count dimensions to 300 and exhibits an accuracy of approximately 94.9%, slightly lower than Raw Counts. This difference in performance could be attributed to LSA's primary focus on capturing underlying semantic information while potentially sacrificing fine-grained details. The reduced dimensionality might not effectively capture the intricacies of the text, suchs as word variations or synonyms ,contributing to its marginally decreased performance. It's important to note that LSA has limitations, such as sensitivity to term variability.
    
 4. **Word2Vec:**
 
-   In our evaluation, Word2Vec yields a lower classification performance with an accuracy of approximately 91%. This decrease in performance can be attributed to Word2Vec's reliance on pre-trained word vectors, which may not be perfectly aligned with the distinctive writing styles of Lewis Carroll or Jane Austen. It's important to consider that these authors wrote their works almost two centuries ago, while we are employing a pre-trained model derived from contemporary news data. This anachronism could contribute to Word2Vec's challenges in capturing the unique textual characteristics and semantics of these historical writings.
+   In our evaluation, Word2Vec yields a lower classification performance with an accuracy of approximately 91.9%. This decrease in performance can be attributed to Word2Vec's reliance on pre-trained word vectors, which may not be perfectly aligned with the distinctive writing styles of Lewis Carroll or Jane Austen. It's important to consider that these authors wrote their works almost two centuries ago, while we are employing a pre-trained model derived from contemporary news data. This anachronism could contribute to Word2Vec's challenges in capturing the unique textual characteristics and semantics of these historical writings.
