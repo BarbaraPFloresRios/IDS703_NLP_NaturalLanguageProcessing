@@ -35,7 +35,7 @@ In this implementation, Latent Semantic Analysis (LSA) is applied to the token c
 These four models allow for a comparison of different approaches to document classification, ranging from simple token count-based representations to more advanced representations based on word semantics.
 
 
-# Results
+### Results
 
 ```python
 raw counts (train): 0.9887267904509284
