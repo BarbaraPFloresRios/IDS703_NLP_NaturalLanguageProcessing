@@ -52,8 +52,8 @@ word2vec (test): 0.9194029850746268
 ```
 
 
-**Raw Counts:**
+1. **Raw Counts:**
 In our baseline case, we employed Raw Counts, where documents are represented as vectors of token counts. We achieved an accuracy of approximately 97% on our test data, which can be considered a robust performance for our model. Raw Counts provide a fundamental approach to document representation by considering the raw frequency of words in documents.
 
-**TF-IDF:**
+2. **TF-IDF:**
 When we transition to the TF-IDF model, we observe slightly improved results with an accuracy of 97.1% on our test data. TF-IDF represents an enhancement over Raw Counts as it accounts for the importance of words within the entire document collection. This method assigns higher weights to words that are common in one class of documents but distinctively frequent in another, thus enhancing the model's ability to discriminate between documents. The focus on term importance results in superior classification performance compared to Raw Counts, which solely considers word frequency. TF-IDF proves effective in capturing the discriminative power of words in the classification process.
