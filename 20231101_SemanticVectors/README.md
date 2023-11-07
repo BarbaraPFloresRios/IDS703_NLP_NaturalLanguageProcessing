@@ -32,6 +32,9 @@ In the following section, we will explore four distinct models for document clas
 4. **Word2Vec:**
    In this implementation, the pre-trained Google News Word2Vec model is used to represent the documents. Each word in a document is represented as a dense vector and then averaged to obtain a representation for the entire document, resulting in document vectors of 300 dimensions. A logistic regression classifier is used for classification.
 
+   In this implementation, we utilize the pre-trained Google News Word2Vec model, 'GoogleNews-vectors-negative300.bin,' which was obtained from [https://code.google.com/archive/p/word2vec/](https://code.google.com/archive/p/word2vec/). This model is employed to represent the documents, where each word in a document is represented as a dense vector. These individual word vectors are then averaged to create a representation for the entire document, resulting in document vectors of 300 dimensions. Classification is performed using a logistic regression classifier.
+
+
 These four models allow for a comparison of different approaches to document classification, ranging from simple token count-based representations to more advanced representations based on word semantics.
 
 
