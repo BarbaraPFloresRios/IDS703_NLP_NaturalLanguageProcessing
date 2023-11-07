@@ -12,7 +12,7 @@ For more details about the exercise, you can refer to the [assignment_instructio
 
 You can find our completed work for this project in [document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/document_vectors_experiment.py) file
 
-
+### Models
 
 In the following section, we will explore four distinct models for document classification. Each of these models leverages various techniques to represent and classify documents. Central to these techniques is the concept of the 'bag of words,' which forms the foundation of traditional text analysis. While some models directly rely on the 'bag of words' approach by counting the occurrences of individual tokens, others transcend this concept to capture more nuanced aspects of document semantics. Let's delve into these models and discover how they harness the 'bag of words' and other sophisticated techniques to classify documents.
 
