@@ -17,14 +17,16 @@ COMENTAR LO DE LA BOLSA DE WORDS
 The models that were compared in this exercise were:
 
 1. **Raw Counts (Token Counts)**:
-- In this implementation, documents are represented as vectors of token counts. Each document is converted into a vector where each dimension represents the frequency of a token in the vocabulary. A logistic regression classifier is then used for classification.
+   
+In this implementation, documents are represented as vectors of token counts. Each document is converted into a vector where each dimension represents the frequency of a token in the vocabulary. A logistic regression classifier is then used for classification.
 
-2. **TF-IDF (Term Frequency-Inverse Document Frequency)**:
-- In this implementation, the TF-IDF representation is used instead of token counts. Documents are transformed into vectors weighted by TF-IDF, which takes into account the importance of each word in the context of all the documents. A logistic regression classifier is used for classification.
+3. **TF-IDF (Term Frequency-Inverse Document Frequency)**:
 
-3. **LSA (Latent Semantic Analysis):**
+In this implementation, the TF-IDF representation is used instead of token counts. Documents are transformed into vectors weighted by TF-IDF, which takes into account the importance of each word in the context of all the documents. A logistic regression classifier is used for classification.
 
-- In this implementation, Latent Semantic Analysis (LSA) is applied to the token count representation. LSA is a dimensionality reduction technique that seeks to extract underlying semantic information in the documents. TruncatedSVD is used to perform dimensionality reduction, reducing the document vectors to 300 dimensions. A logistic regression classifier is then trained on the data transformed by LSA.
+4. **LSA (Latent Semantic Analysis):**
+
+In this implementation, Latent Semantic Analysis (LSA) is applied to the token count representation. LSA is a dimensionality reduction technique that seeks to extract underlying semantic information in the documents. TruncatedSVD is used to perform dimensionality reduction, reducing the document vectors to 300 dimensions. A logistic regression classifier is then trained on the data transformed by LSA.
 
 
 4. **Word2Vec:**
