@@ -3,7 +3,7 @@
 #### Bárbara Flores
 
 
-
+### Project Introduction
 In this project, we modify and enhance the provided [input_document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/input_document_vectors_experiment.py), which was originally given during the Introduction to NLP class, taught by Patrick Wang. 
 
 Our goal is to explore how dense word/document embeddings can be utilized for document classification and compare the performance of various models. The task at hand is to differentiate between documents authored by two distinct writers: `Lewis Carroll` and `Jane Austen`. We will compare four different types of dense document vectors, two of which were provided in the assignment instructions, and the remaining two were developed as part of this work.
