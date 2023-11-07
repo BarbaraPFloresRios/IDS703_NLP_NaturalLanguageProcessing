@@ -27,7 +27,7 @@ The models that were compared in this exercise were:
 - In this implementation, Latent Semantic Analysis (LSA) is applied to the token count representation. LSA is a dimensionality reduction technique that seeks to extract underlying semantic information in the documents. TruncatedSVD is used to perform dimensionality reduction, reducing the document vectors to 300 dimensions. A logistic regression classifier is then trained on the data transformed by LSA.
 
 
-**4. Word2Vec:**
+4. **Word2Vec:**
    - In this implementation, the pre-trained Google News Word2Vec model is used to represent the documents. Each word in a document is represented as a dense vector and then averaged to obtain a representation for the entire document, resulting in document vectors of 300 dimensions. A logistic regression classifier is used for classification.
 
 These four models allow for a comparison of different approaches to document classification, ranging from simple token count-based representations to more advanced representations based on word semantics.
