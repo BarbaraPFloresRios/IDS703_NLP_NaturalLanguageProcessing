@@ -17,10 +17,10 @@ COMENTAR LO DE LA BOLSA DE WORDS
 The models that were compared in this exercise were:
 
 1. **Raw Counts (Token Counts)**:
-   - In this implementation, documents are represented as vectors of token counts. Each document is converted into a vector where each dimension represents the frequency of a token in the vocabulary. A logistic regression classifier is then used for classification.
+- In this implementation, documents are represented as vectors of token counts. Each document is converted into a vector where each dimension represents the frequency of a token in the vocabulary. A logistic regression classifier is then used for classification.
 
 2. **TF-IDF (Term Frequency-Inverse Document Frequency)**:
-   - In this implementation, the TF-IDF representation is used instead of token counts. Documents are transformed into vectors weighted by TF-IDF, which takes into account the importance of each word in the context of all the documents. A logistic regression classifier is used for classification.
+- In this implementation, the TF-IDF representation is used instead of token counts. Documents are transformed into vectors weighted by TF-IDF, which takes into account the importance of each word in the context of all the documents. A logistic regression classifier is used for classification.
 
 3. **LSA (Latent Semantic Analysis):**
 
@@ -28,7 +28,7 @@ The models that were compared in this exercise were:
 
 
 4. **Word2Vec:**
-   - In this implementation, the pre-trained Google News Word2Vec model is used to represent the documents. Each word in a document is represented as a dense vector and then averaged to obtain a representation for the entire document, resulting in document vectors of 300 dimensions. A logistic regression classifier is used for classification.
+- In this implementation, the pre-trained Google News Word2Vec model is used to represent the documents. Each word in a document is represented as a dense vector and then averaged to obtain a representation for the entire document, resulting in document vectors of 300 dimensions. A logistic regression classifier is used for classification.
 
 These four models allow for a comparison of different approaches to document classification, ranging from simple token count-based representations to more advanced representations based on word semantics.
 
