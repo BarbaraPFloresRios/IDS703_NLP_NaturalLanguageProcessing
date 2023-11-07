@@ -2,7 +2,7 @@
 #### Daniela Jiménez
 #### Bárbara Flores
 
-**Assignment:**
+
 
 In this assignment, we modify and enhance the provided [input_document_vectors_experiment.py](https://github.com/BarbaraPFloresRios/IDS703_NLP_NaturalLanguageProcessing/blob/main/20231101_SemanticVectors/input_document_vectors_experiment.py), which was originally given during the Introduction to NLP class, taught by Patrick Wang. 
 
